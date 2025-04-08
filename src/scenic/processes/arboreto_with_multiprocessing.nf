@@ -31,6 +31,12 @@ process ARBORETO_WITH_MULTIPROCESSING {
         outputFileName = "numRuns" in toolParams && toolParams.numRuns > 1 ? sampleId + "__run_" + runId +"__adj.tsv.gz" : sampleId + "__adj.tsv.gz"
         seed = "numRuns" in toolParams && toolParams.numRuns > 1 ? (params.global.seed + runId) : params.global.seed
         """
+        echo "==== SLURM/CPU DEBUG ===="
+        echo "SLURM_CPUS_ON_NODE: \$SLURM_CPUS_ON_NODE"
+        echo "task.cpus: ${task.cpus}"
+        echo "nproc (detected): \$(nproc)"
+        echo "=========================="
+        
         arboreto_with_multiprocessing.py \
             $filteredLoom \
             $tfs \
