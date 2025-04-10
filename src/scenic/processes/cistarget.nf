@@ -45,7 +45,6 @@ process CISTARGET {
             --expression_mtx_fname ${filteredLoom} \
             --cell_id_attribute ${toolParams.cell_id_attribute} \
             --gene_attribute ${toolParams.gene_attribute} \
-            --mode ${toolParams.mode} \
             --output ${outputFileName} \
             --num_workers ${task.cpus} \
         """
