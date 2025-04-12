@@ -552,7 +552,7 @@ class SCopeLoom:
         return regulon_meta_data
 
     def create_loom_md_regulon_thresholds(self):
-        return [self.get_regulon_meta_data(name, threshold) for name, threshold in self.auc_thresholds.iteritems()]
+        return [self.get_regulon_meta_data(name, threshold) for name, threshold in self.auc_thresholds.items()]
 
     def create_loom_regulon_gene_assignment(self):
         # Encode genes in regulons as "binary" membership matrix.
